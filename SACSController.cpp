@@ -17,7 +17,7 @@ void SACSController::setAutoTemp(int temperature){
 void SACSController::setBrewing(bool brewing){
     this->brewing = brewing;
 }
-void SACSController::setClock(Clock &clock, int seconds){
+void SACSController::setClock(int seconds){
     if (seconds > 86400){
         throw std::runtime_error("Too many seconds");
     } else {
@@ -48,6 +48,11 @@ bool SACSController::isStillBrewing(){
 void SACSController::openValve(){
     std::cout << "OPENING RESERVOIR VALVE" << std::endl;
 }
+
+void SACSController::closeValve(){
+    std::cout << "CLOSING RESERVOIR VALVE" << std::endl;
+}
+
 void SACSController::beep(){
     std::cout << "BEEP \a" << std::endl;
 }

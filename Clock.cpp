@@ -1,5 +1,17 @@
 #include "Clock.h"
 
+Clock::Clock()
+{
+  
+}
+
+
+Clock::Clock(int seconds)
+{
+  this->seconds = seconds;
+}
+          
+
 
 int Clock::getSeconds()
 {
