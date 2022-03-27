@@ -10,6 +10,8 @@ class Clock
 
 
     public:
+        Clock();
+        Clock(int seconds);
         int getSeconds();
         void setSeconds(int num);
         void incrementFiveSeconds();

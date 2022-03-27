@@ -12,15 +12,15 @@ class SACSController {
 
     public:
         // constructor
-        SACSController(int temp, int coffeesBrewed, int autoTime, int autoTemp, bool brewing) : 
-        temp(temp), coffeesBrewed(coffeesBrewed), autoTime(autoTime), autoTemp(autoTemp), brewing(brewing){}
+        SACSController(int temp, int coffeesBrewed, int autoTime, int autoTemp, bool brewing, int seconds) : 
+        temp(temp), coffeesBrewed(coffeesBrewed), autoTime(autoTime), autoTemp(autoTemp), brewing(brewing), clock(seconds){}
 
         // setters
         void setTemp(int temperature);
         void setAutoTime(int time);
         void setAutoTemp(int temperature);
         void setBrewing(bool brewing);
-        void setClock(Clock &clock, int seconds);
+        void setClock(int seconds);
         
         // getters
         inline int getTemp() const{ return temp; }
@@ -28,6 +28,7 @@ class SACSController {
         inline int getAutoTemp() const { return autoTemp; }
         inline bool getBrewing() const { return brewing; }
         inline Clock getClock() const { return clock; }
+        inline int getCoffeesBrewed() const { return coffeesBrewed; }
 
         // display functions
         void displayTime();
@@ -38,7 +39,9 @@ class SACSController {
 
         // hardware functions
         void openValve();
+        void closeValve();
         void beep();
+        
 
         // misc.
         void incrementCoffeesBrewed();
