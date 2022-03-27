@@ -35,17 +35,17 @@ int main() {
   
   // setbrewing
   controller.setBrewing(1);
+  cout << "Brewing..." << endl;
   
   // startheating
   thermos.toggleWaterHeating(); // toggles power state
   
-  // loop isstillbrewing
   // getWaterFlow
   while (showerhead.getWaterFlow()){
-    // loop notattemp
     // getWaterTemp
     int currentWaterTemp = thermos.getWaterTemp();
     // watertemp != temp
+    // loop notattemp
     while(controller.getTemp() != thermos.getWaterTemp()){
       currentWaterTemp += 5;
       thermos.setWaterTemp(currentWaterTemp);
